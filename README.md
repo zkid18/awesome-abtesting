@@ -40,6 +40,32 @@
 - The more you peek, the more your significance levels will be off.
 - If you run experiments: the best way to avoid repeated significance testing errors is to not test significance repeatedly
 
+#### Switchback tests
+
+*How to Optimize your Switchback A/B Test Configuration* [link](https://towardsdatascience.com/how-to-optimize-your-switchback-a-b-test-configuration-791a28bee678)
+
+- Switchback experiments, also known as time split experiments, employ sequential reshuffling of control/treatments to remove bias inherent to certain data. Used in two-sided marketplaces, Uber, DoorDash, Upwork, Lyft. They allow experimentations with finite resources. A/B testing frameworks that run many versions of a single experiment over time.
+- Carryover effect, the time it takes for our finite resource to replenish, to minimize the variance of our experiment.  One example for rideshare markets is the number of time splits it takes for drivers to become available for another ride. From our freelancer example above, when a freelancer is hired, they are removed from the candidate pool for some time while they complete the project. The duration that it takes for a candidate to reenter the pool is our carryover duration.
+- Encode the Risk Function to Minimize. The function that minimized will provide the best randomization points for our specified carryover effect order (m) and experiment length (K).
+- Develop optimized control/treeatment sequence
+- Run the experiment and analyze 
+
+*Switchback Tests and Randomized Experimentation Under Network Effects at DoorDash* [link](https://medium.com/@DoorDash/switchback-tests-and-randomized-experimentation-under-network-effects-at-doordash-f1d938ab7c2a)
+
+- Given the systemic nature of many of our products, simple A/B tests are often ineffective due to network effects. To be able to experiment in the face of network effects, we use a technique known as switchback testing, where we switch back and forth between treatment and control in particular regions over time
+- The problem here is the network effect — both sets of Consumers share the same Dasher fleet — so adding a Consumer to the treatment group also affects the experience of Consumers in the control group and we can not establish independence between the two groups.
+- Use 30 minutes carry-over
+- Traditional A/B testing has an assumption of independent units, which means that if we know something about the behavior of one unit, it does not tell us anything about the behavior of the second. This assumption is clearly violated in the case of time-region units as the performance of one time-region is highly correlated and can influence the performance of the next. 
+- To understand the interplay between natural variation and number of samples, we ran a series of long-term A/A tests. These tests allowed us to look at how margin of error differed for the average value of a certain metric in a time-region unit as we switched back and forth more quickly or more slowly. 
+
+
+
+
+ 
+
+
+
+
 #### Sequnetial AB testing
 
 *Simple Sequential A/B Testing* [link] (https://www.evanmiller.org/sequential-ab-testing.html)
